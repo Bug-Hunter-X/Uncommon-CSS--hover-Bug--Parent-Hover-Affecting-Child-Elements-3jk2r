@@ -1,0 +1,20 @@
+The following CSS code snippet demonstrates an uncommon error related to unexpected behavior of the `:hover` pseudo-class within a parent-child relationship when combined with certain display properties.  Specifically, the hover effect on the parent element unexpectedly affects the child elements, even though the hover is not explicitly applied to the children.
+
+```css
+.parent {
+  display: inline-block; /* Or display: flex; or display: grid; */
+  background-color: lightblue;
+  padding: 10px;
+}
+
+.parent:hover {
+  background-color: lightcoral;
+}
+
+.child {
+  background-color: lightgreen;
+  padding: 5px;
+}
+```
+
+This might cause unexpected visual changes when hovering over the parent because the child elements will change background color along with the parent, even though there's no `:hover` rule defined for the `.child` class.  This is not necessarily a bug in the CSS itself, but rather an unexpected interaction of properties and inheritance that can easily be missed.
