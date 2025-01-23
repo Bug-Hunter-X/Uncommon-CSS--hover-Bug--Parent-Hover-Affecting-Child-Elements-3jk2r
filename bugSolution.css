@@ -1,0 +1,25 @@
+To resolve this unexpected behavior, explicitly define the desired hover behavior for both parent and child elements.  Instead of relying on inheritance, separate styling will provide more control and clarity.
+
+```css
+.parent {
+  display: inline-block; /* Or display: flex; or display: grid; */
+  background-color: lightblue;
+  padding: 10px;
+}
+
+.parent:hover {
+  background-color: lightcoral;
+}
+
+.child {
+  background-color: lightgreen;
+  padding: 5px;
+}
+
+/* Solution: Explicitly style child elements on parent hover */
+.parent:hover .child {
+  background-color: lightgoldenrodyellow; /* Or any other desired color */
+}
+```
+
+Alternatively, if you want to prevent the child elements from being affected by the parent's hover, you can use a more specific selector in the child styles, or consider resetting inherited properties with `all: unset` within the child hover style.  Choose the solution that best aligns with your intended behavior.
